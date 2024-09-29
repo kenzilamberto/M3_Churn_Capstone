@@ -12,11 +12,15 @@ Dengan memahami dan menerapkan strategi untuk mengurangi churn, perusahaan tidak
 
 Dataset yang akan dibahas hari ini merupakan milik sebuah perusahaan e-commerce online terkemuka. Perusahaan ini ingin mengetahui pelanggan seperti apa yang akan berhenti/churn, sehingga mereka dapat untuk menawarkan promo kepada pelanggan yang lebih tepat dan menjaga retensi pelanggan.
 
+
+
 **Problem Statement and Goals**  
   
 Sebelum menawarkan promo, perusahaan perlu merancang strategi agar promo tepat sasaran. Promo tentunya tidak diberikan kepada semua pelanggan, namun diprioritaskan untuk mereka yang diperkirakan akan churn. Langkah ini bertujuan untuk efisiensi dalam pengeluaran promo. Jika perusahaan keliru dalam memberikan promo atau memberikan promo secara sembarangan kepada pelanggan yang tidak diprediksi akan churn, hal ini dapat menyebabkan kerugian operasional akibat pengeluaran biaya untuk promo yang sebenarnya tidak perlu.
 
 Goals dari perusahaan ialah memprediksi pelanggan seperti apa yang sangat mungkin akan churn, agar dapat memfokuskan penawaran promo kepada mereka. Perusahaan juga ingin mengidentifikasi faktor-faktor atau variabel yang mempengaruhi keputusan pelanggan untuk churn agar dapat merancang rencana yang lebih efektif untuk meningkatkan loyalitas pelanggan.
+
+
 
 **Analytic Approach**  
   
@@ -24,21 +28,23 @@ Bangun model klasifikasi yang akan membantu perusahaan untuk dapat memprediksi p
 
 Selain itu, dengan mengetahui faktor apa saja yang mempengaruhi pelanggan *churn* dapat menjadi pendukung pengambilan keputusan strategi pemasaran.
 
+
+
 **Evaluation Metrics**  
   
 Dalam melakukan prediksi, kesalahan yang dapat terjadi yaitu:
 
-**Type 1 error** : False Positive  
+*Type 1 error* : False Positive  
 Konsekuensi: kerugian perusahaan karena mengeluarkan biaya promo untuk pelanggan yang tidak tepat.
 
-**Type 2 error** : False Negative  
+*Type 2 error* : False Negative  
 Konsekuensi: kerugian perusahaan karena customer berhenti/*churn*.
 
-**Target**:   
+*Target*:   
 0 : Pelanggan tidak *churn*  
 1 : Pelanggan *churn*
 
-**Evaluation**:
+*Evaluation*:
 Evaluation yang digunakan ialah Sensitivity, Accuracy, F2 Score.
 
 [Confussion Matrix](https://dearpandemic.org/wp-content/uploads/2022/05/Sarah-1.png)
@@ -54,6 +60,8 @@ Evaluation yang digunakan ialah Sensitivity, Accuracy, F2 Score.
 Menurut [Singh et al. (2024)](https://www.sciencedirect.com/science/article/pii/S2666764923000401), kombinasi antara sensitivity dan accuracy adalah matriks evaluasi yang paling cocok untuk konteks custome churn.
 
 Mempertahankan Pelanggan akan sangat diperhatikan dalam kasus ini (*False Negative*) karena dapat berakibat buruk terhadap keberlangsungan perusahaan. Namun, jika kita tetap ingin melihat evaluasi dari (*False Positive*), sehingga digunakan juga F2 Score.
+
+
 
 **Final Model**
 Benchmarking Model dilakukan untuk mendapatkan hasil yang terbaik, diantaranya Logistic Regression, Decision Tree, Random Forest, KNN, AdaBoost, XGBoost, GradientBoost, LightGBM, dan SVC dengan metode Cross-Validation dan Prediction F2 Score. **LightGBM** dengan hyperparameter tuning menjadi model terbaik dengan parameter 
